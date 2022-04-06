@@ -1,4 +1,5 @@
 # vue-wechat
+[预览地址](http://test.ocink.cn)
 
 ## Project setup
 ```
