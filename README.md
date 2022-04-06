@@ -1,4 +1,4 @@
-# tim
+# vue-wechat
 
 ## Project setup
 ```
