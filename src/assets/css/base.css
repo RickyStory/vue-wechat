@@ -1,0 +1,220 @@
+.chat-sender{
+    clear:both;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.chat-sender div:nth-of-type(1){
+    float: left;
+}
+.chat-sender div:nth-of-type(2){
+    margin: 0 50px 2px 50px;
+    padding: 0px;
+    color: #848484;
+    font-size: 70%;
+    text-align: left;
+}
+.chat-sender div:nth-of-type(3){
+    /*float: left;*/
+    margin: 0 50px 10px 50px;
+    border-radius:7px;
+    text-indent: -12px;
+}
+
+.chat-receiver{
+    clear:both;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.chat-receiver div:nth-of-type(1){
+    float: right;
+}
+.chat-receiver div:nth-of-type(2){
+    margin: 0px 50px 2px 50px;
+    padding: 0px;
+    color: #848484;
+    font-size: 70%;
+    text-align: right;
+}
+.chat-receiver div:nth-of-type(3){
+    /*float: right; */
+    margin: 0px 50px 10px 50px;
+    border-radius: 7px;
+}
+
+.msgright{
+    background-color: #07c160;
+    background-color: var(--weui-BRAND);
+    padding: 10px 0px 10px 10px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    word-break:break-all;
+    word-wrap:break-word;
+    color: rgba(0,0,0,0.9);
+    font-weight: bold;
+}
+
+.msgleft{
+    background-color: #fff;
+    background-color: var(--weui-BG-2);
+    padding: 10px 10px 10px 10px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    word-break:break-all;
+    word-wrap:break-word;
+    color: rgba(0,0,0,0.9);
+    color: var(--weui-FG-0);
+    position: relative;
+    font-weight: bold;
+}
+
+.chat-receiver div:first-child img,
+.chat-sender div:first-child img{
+    width: 40px;
+    height: 40px;
+    border-radius: 10%;
+}
+
+.chat-left_triangle {
+    height: 0px;
+    width: 0px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent #fff transparent transparent;
+    border-color: transparent var(--weui-BG-2) transparent transparent;
+    position: absolute;
+    left: -12px;
+    top: 11px;
+}
+.chat-right_triangle{
+    height: 0px;
+    width: 0px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #07c160;
+    border-color: transparent transparent transparent var(--weui-BRAND);
+    position: relative;
+    right: -12px;
+    top:3px;
+}
+
+.chat-notice{
+    clear: both;
+    font-size: 70%;
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.chat-notice span{
+    background-color: #cecece;
+    line-height: 25px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.clearfix {
+    display: inline-block;
+    padding: 0 .4rem;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix li {
+    float: left;
+    text-align: center;
+    margin-top: .4rem;
+    width: 25%;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    list-style: none;
+}
+
+.clearfix a {
+    display: inline-block;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    text-decoration: none;
+}
+
+.avatar {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    position: relative;
+}
+
+.avatar:before {
+    content: "";
+    background-color: #fff;
+    border: 1px solid #e9e9e9;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.clearfix li .layui-icon {
+    position: relative;
+    font-size: 30px;
+    color: #999;
+    display: inline-block;
+    padding-top: 5px;
+}
+
+.avatar input[type="file"] {
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 11;
+}
+
+ul li a p {
+    color: #999;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.example {
+    border-radius: 3px;
+}
+
+.ulpd{
+    width: 100%;
+    background: white;
+    padding: 10px 0;
+}
+
+.ulpd div{
+    margin: 0 15px;
+}
+
+@media screen and (max-width: 767px) {
+    .app{
+        width: 100%;
+    }
+    .head{
+        width: 100%;
+    }
+    .body{
+        width: 100%;
+    }
+    .foot{
+        width: 100%;
+    }
+}
+
+:root {
+    --theme-head-background: #f7f7f7;
+    --theme-body-background: #ebebe9;
+    --theme-foot-background: #f7f7f7;
+    --shadow-color: rgba(17,58,93,.1);
+}

@@ -1,37 +1,36 @@
 <template>
   <div class="weui-tab">
     <div class="weui-tab__panel">
-      <Header title="通讯录"></Header>
-      <div class="weui-panel" style="margin-top: 0;">
-        <div class="weui-panel__bd">
-          <div class="weui-media-box weui-media-box_small-appmsg">
-            <div class="weui-cells">
-              <a class="weui-cell weui-cell_active weui-cell_access weui-cell_example" style="padding: 0.8rem 1rem;">
-                <div aria-hidden="true" class="weui-cell__hd" style="display: flex;flex-direction: row;align-items: center;"><img src="@/assets/images/icon/friend.svg" style="width: 1.6rem;" alt=""></div>
-                <div aria-hidden="true" class="weui-cell__bd weui-cell_primary" style="margin-left: 1rem;">
-                  <span>新的朋友</span>
-                </div>
-                <div class="weui-cell__ft"></div>
-              </a>
-              <a class="weui-cell weui-cell_active weui-cell_access weui-cell_example" style="padding: 0.8rem 1rem;">
-                <div aria-hidden="true" class="weui-cell__hd" style="display: flex;flex-direction: row;align-items: center;"><img src="@/assets/images/icon/team.svg" style="width: 1.6rem;" alt=""></div>
-                <div aria-hidden="true" class="weui-cell__bd weui-cell_primary" style="margin-left: 1rem;">
-                  <span>群聊</span>
-                </div>
-                <div class="weui-cell__ft"></div>
-              </a>
-            </div>
+      <Header></Header>
+      <div class="weui-search-bar">
+        <form class="weui-search-bar__form">
+          <div class="weui-search-bar__box">
+            <input type="search" class="weui-search-bar__input" placeholder="搜索" />
           </div>
-        </div>
+          <router-link to="add_friend"><label class="weui-search-bar__label" >
+            <i class="weui-icon-search"></i>
+            <span>账号搜索</span>
+          </label>
+          </router-link>
+        </form>
       </div>
       <template v-for="(item,index) in friends">
         <div :id="index" class="friends-index">{{index}}</div>
         <div class="messages" style="margin-top: 5px;">
           <template v-for="info in item">
             <div class="message">
-              <img :src="info.avatar" style="width: 1.8rem" alt="">
+              <img :src="info.avatar" style="width: 2.8rem" alt="">
               <div class="con">
                 <span>{{info.nickname}}</span>
+                <p>{{info.des}}</p>
+              </div>
+              <div class="buttons">
+                <template v-if="info.status===0">
+                  已添加
+                </template>
+                <template v-else>
+                  <a href="javascript:" role="button" class="weui-btn weui-btn_mini weui-btn_primary weui-wa-hotarea">同意</a>
+                </template>
               </div>
             </div>
           </template>
@@ -42,7 +41,7 @@
 </template>
 
 <script>
-import Header from '@/components/header'
+import Header from '@/components/new_friend/header'
 export default {
   name: "new_friend",
   components:{
@@ -58,56 +57,80 @@ export default {
   },
   mounted() {
     this.friends = {
-      'A' : [{
+      '三天前' : [{
         'uid' : 1,
         'avatar' : require('@/assets/avatar/default_nor_avatar.png'),
-        'nickname' : "Acink"
+        'nickname' : "Acink",
+        'des' : "我是XXX看到你的",
+        'status' : 1
       },{
         'uid' : 2,
         'avatar' : require('@/assets/avatar/default_nor_avatar.png'),
-        'nickname' : "Ait"
+        'nickname' : "Ait",
+        'des' : "我是XXX看到你的",
+        'status' : 1
       },{
         'uid' : 3,
         'avatar' : require('@/assets/avatar/default_nor_avatar.png'),
-        'nickname' : "Aick"
+        'nickname' : "Aick",
+        'des' : "我是XXX看到你的",
+        'status' : 1
       },{
         'uid' : 4,
         'avatar' : require('@/assets/avatar/default_nor_avatar.png'),
-        'nickname' : "Aitty"
+        'nickname' : "Aitty",
+        'des' : "我是XXX看到你的",
+        'status' : 0
       }],
-      'B' : [{
+      '一周前' : [{
         'uid' : 5,
         'avatar' : require('@/assets/avatar/default_nor_avatar.png'),
-        'nickname' : "Bcink"
+        'nickname' : "Bcink",
+        'des' : "我是XXX看到你的",
+        'status' : 0
       },{
         'uid' : 6,
         'avatar' : require('@/assets/avatar/default_nor_avatar.png'),
-        'nickname' : "Bit"
+        'nickname' : "Bit",
+        'des' : "我是XXX看到你的",
+        'status' : 0
       },{
         'uid' : 7,
         'avatar' : require('@/assets/avatar/default_nor_avatar.png'),
-        'nickname' : "Bick"
+        'nickname' : "Bick",
+        'des' : "我是XXX看到你的",
+        'status' : 0
       },{
         'uid' : 8,
         'avatar' : require('@/assets/avatar/default_nor_avatar.png'),
-        'nickname' : "Bitty"
+        'nickname' : "Bitty",
+        'des' : "我是XXX看到你的",
+        'status' : 0
       }],
-      'C' : [{
+      '一月前' : [{
         'uid' : 9,
         'avatar' : require('@/assets/avatar/default_nor_avatar.png'),
-        'nickname' : "Ccink"
+        'nickname' : "Ccink",
+        'des' : "我是XXX看到你的",
+        'status' : 0
       },{
         'uid' : 10,
         'avatar' : require('@/assets/avatar/default_nor_avatar.png'),
-        'nickname' : "Cit"
+        'nickname' : "Cit",
+        'des' : "我是XXX看到你的",
+        'status' : 0
       },{
         'uid' : 11,
         'avatar' : require('@/assets/avatar/default_nor_avatar.png'),
-        'nickname' : "Cick"
+        'nickname' : "Cick",
+        'des' : "我是XXX看到你的",
+        'status' : 0
       },{
         'uid' : 12,
         'avatar' : require('@/assets/avatar/default_nor_avatar.png'),
-        'nickname' : "Citty"
+        'nickname' : "Citty",
+        'des' : "我是XXX看到你的",
+        'status' : 0
       }]
     }
   }
